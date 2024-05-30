@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const ResultItem = ({ exe, removeExpense }) => {
+const ResultItem = ({ exe }) => {
   const { date, item, descript, amount, id } = exe; // 구조분해할당
 
   const navigate = useNavigate();

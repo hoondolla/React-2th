@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+import { ExpenseContext } from "../contexts/ExpenseContext";
 
 const DateInput = ({ value, onChange }) => (
   <div>
@@ -32,7 +33,9 @@ const CommitButton = ({ onClick }) => (
   </button>
 );
 
-const InputForm = ({ handleCommit }) => {
+const InputForm = () => {
+  const { handleCommit } = useContext(ExpenseContext);
+
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
   const [descript, setDescript] = useState("");

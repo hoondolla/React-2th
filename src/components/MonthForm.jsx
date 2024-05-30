@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ExpenseContext } from "../contexts/ExpenseContext";
 
-const MonthForm = ({ month, setMonth }) => {
+const MonthForm = () => {
+  const { month, setMonth } = useContext(ExpenseContext);
   const months = [
     "01",
     "02",

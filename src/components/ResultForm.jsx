@@ -1,20 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import ResultItem from "./ResultItem";
+import { ExpenseContext } from "../contexts/ExpenseContext";
 
-const ResultForm = ({ removeExpense, filteredExpenses }) => {
+const ResultForm = () => {
+  const { filteredExpenses } = useContext(ExpenseContext);
   return (
     <>
       <ReadContainer>
         <ReadFormSt>
           {filteredExpenses.map((exe) => {
-            return (
-              <ResultItem
-                removeExpense={removeExpense}
-                key={exe.id}
-                exe={exe}
-              />
-            );
+            return <ResultItem key={exe.id} exe={exe} />;
           })}
         </ReadFormSt>
       </ReadContainer>
