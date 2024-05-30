@@ -44,6 +44,12 @@ const ExpenseDetail = ({ expense, setExpense }) => {
     navigate("/");
   };
 
+  const DeleteExpense = () => {
+    const newExpense = expense.filter((expense) => expense.id !== id);
+    setExpense(newExpense);
+    navigate("/");
+  };
+
   return (
     <DivHt>
       <DetailContainer>
@@ -86,7 +92,7 @@ const ExpenseDetail = ({ expense, setExpense }) => {
           </div>
           <ButtonSt>
             <button onClick={() => modifyButton(id)}>수정</button>
-            <button>삭제</button>
+            <button onClick={DeleteExpense}>삭제</button>
             <button onClick={handleBack}>뒤로가기</button>
           </ButtonSt>
         </DetailForm>
