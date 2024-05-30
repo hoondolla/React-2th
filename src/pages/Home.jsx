@@ -27,10 +27,15 @@ const Home = ({ expense, setExpense }) => {
   useEffect(() => {
     localStorage.setItem("expenseData", JSON.stringify(expense));
   });
+
+  const [month, setMonth] = useState(1);
+
+  console.log(month);
+
   return (
     <DivHt>
       <InputForm handleCommit={handleCommit} />
-      <MonthForm />
+      <MonthForm month={month} setMonth={setMonth} />
       <ResultForm
         removeExpense={removeExpense}
         key={expense.id}
