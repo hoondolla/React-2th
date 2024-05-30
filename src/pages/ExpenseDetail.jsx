@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import { ExpenseContext } from "../contexts/ExpenseContext";
 
-const ExpenseDetail = ({ expense, setExpense }) => {
+const ExpenseDetail = () => {
+  const { expense, setExpense } = useContext(ExpenseContext);
+
   const { id } = useParams();
   const navigate = useNavigate();
 

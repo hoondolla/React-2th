@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import ExpenseDetail from "../pages/ExpenseDetail";
-import { v4 as uuidv4 } from "uuid";
 import GlobalStyle from "../style/GlobalStyle";
 
 // 2. Router 라는 함수를 만들고 아래와 같이 작성합니다.
