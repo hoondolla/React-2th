@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import ResultItem from "./ResultItem";
 
-const ResultForm = ({ expense, removeExpense }) => {
+const ResultForm = ({ removeExpense, filteredExpenses }) => {
   return (
     <>
       <ReadContainer>
         <ReadFormSt>
-          {expense.map((exe) => {
+          {filteredExpenses.map((exe) => {
             return (
               <ResultItem
                 removeExpense={removeExpense}

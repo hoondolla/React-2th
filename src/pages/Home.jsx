@@ -30,13 +30,18 @@ const Home = ({ expense, setExpense }) => {
 
   const [month, setMonth] = useState(1);
 
-  console.log(month);
+  const filteredExpenses = expense.filter(
+    (expenses) => expenses.date.split("-")[1] === month
+  );
+
+  console.log(filteredExpenses);
 
   return (
     <DivHt>
       <InputForm handleCommit={handleCommit} />
       <MonthForm month={month} setMonth={setMonth} />
       <ResultForm
+        filteredExpenses={filteredExpenses}
         removeExpense={removeExpense}
         key={expense.id}
         expense={expense}

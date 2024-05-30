@@ -2,21 +2,35 @@ import React from "react";
 import styled from "styled-components";
 
 const MonthForm = ({ month, setMonth }) => {
-  const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
 
   return (
     <>
       <MonthContainer>
         <MonthFormSt>
           <div className="MonthForm">
-            {months.map((month) => {
+            {months.map((el) => {
               return (
                 <MonthButton
-                  key={month}
+                  seleceted={el === month}
+                  key={el}
                   onClick={() => {
-                    setMonth(month);
+                    setMonth(el);
                   }}
-                >{`${month}월`}</MonthButton>
+                >{`${el}월`}</MonthButton>
               );
             })}
           </div>
@@ -53,6 +67,8 @@ const MonthButton = styled.button`
     box-shadow: 5px 5px 10px rgba(1, 0, 0, 0.2);
   }
   transition: box-shadow 0.3s;
+  box-shadow: ${(props) =>
+    props.seleceted ? "5px 5px 10px rgba(1, 0, 0, 0.2)" : "none"};
 `;
 
 export default MonthForm;
